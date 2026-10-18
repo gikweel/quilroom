@@ -1,0 +1,15 @@
+services:
+  quilroom:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - quilroom-data:/data
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0
+      - DATA_DIR=/data
+    restart: unless-stopped
+
+volumes:
+  quilroom-data:

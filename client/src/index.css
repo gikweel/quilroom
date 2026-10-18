@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Quill overrides for a cleaner look */
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  background: #fff;
+  padding: 8px 12px !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.ql-editor {
+  min-height: 60vh;
+  padding: 1.5rem 1.25rem !important;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ql-editor.ql-blank::before {
+  color: #9ca3af;
+  font-style: normal;
+  left: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .ql-editor {
+    padding: 2rem 1.5rem !important;
+  }
+  .ql-editor.ql-blank::before {
+    left: 1.5rem;
+  }
+}
