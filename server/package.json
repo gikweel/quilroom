@@ -15,7 +15,7 @@
     "@fastify/cors": "^10.0.1",
     "@fastify/static": "^10.1.6",
     "@fastify/websocket": "^11.0.1",
-    "better-sqlite3": "11.7.0",
+    "better-sqlite3": "13.2.0",
     "fastify": "^5.1.0",
     "lib0": "^0.2.98",
     "nanoid": "^5.0.9",
@@ -24,14 +24,14 @@
     "yjs": "^13.6.20"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.12",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22.10.2",
     "@types/ws": "^8.5.13",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
   "allowScripts": {
-    "better-sqlite3@11.7.0": true,
+    "better-sqlite3@13.2.0": true,
     "esbuild@0.28.2": true,
     "fsevents@2.3.3": true
   }
