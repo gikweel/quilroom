@@ -65,10 +65,18 @@ export default function Editor() {
     if (quillRef.current) return;
 
     const ydoc = new Y.Doc();
-    const protocol = window.location.protocol === "https:" ? "wss" : "ws";
-    const host = window.location.host;
+    // When VITE_API_URL is set (split deploy), derive WebSocket URL from it.
+    // Otherwise fall back to same-origin (monolith / dev proxy).
+    const apiUrl = import.meta.env.VITE_API_URL;
+    let wsBase: string;
+    if (apiUrl) {
+      wsBase = apiUrl.replace(/^http/, "ws") + "/ws";
+    } else {
+      const protocol = window.location.protocol === "https:" ? "wss" : "ws";
+      wsBase = `${protocol}://${window.location.host}/ws`;
+    }
     const provider = new WebsocketProvider(
-      `${protocol}://${host}/ws`,
+      wsBase,
       docId,
       ydoc,
       { connect: true },

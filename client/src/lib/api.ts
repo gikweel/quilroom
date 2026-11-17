@@ -7,7 +7,7 @@ export interface DocMeta {
   last_edited_by?: string | null;
 }
 
-const base = '';
+const base = import.meta.env.VITE_API_URL || '';
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const headers = new Headers(options?.headers);

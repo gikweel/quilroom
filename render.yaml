@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: quilroom-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: node dist/index.js
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: HOST
+        value: "0.0.0.0"
+      - key: DATA_DIR
+        value: /opt/render/project/src/data
+      - key: NODE_ENV
+        value: production
